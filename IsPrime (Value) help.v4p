@@ -1,0 +1,131 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta35.8.dtd" >
+   <PATCH nodename="C:\Users\io\Desktop\vvvv-isPrime\IsPrime (Value) help.v4p" systemname="IsPrime (Value) help" filename="C:\Users\io\Desktop\vvvv-isPrime\IsPrime (Value) help.v4p" scrollx="0" scrolly="-360">
+   <BOUNDS type="Window" left="768" top="2556" width="3792" height="5712">
+   </BOUNDS>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="0" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="258" top="252" width="2808" height="228">
+   </BOUNDS>
+   <BOUNDS type="Box" left="258" top="252" width="2808" height="228">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|isPrime  --  checks if number is a prime|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <PACK Name="dx11" Version="1.0.3">
+   </PACK>
+   <PACK Name="vvvv-Message" Version="2.9.10">
+   </PACK>
+   <PACK Name="addonpack" Version="35.0.0">
+   </PACK>
+   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="3">
+   <BOUNDS type="Node" left="1326" top="1578" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Cycles" visible="1">
+   </PIN>
+   <PIN pinname="Period" visible="-1" pintype="Input" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Pause" visible="-1" pintype="Input" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Reverse" visible="-1" pintype="Input" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Reset" visible="1" pintype="Input" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Phase" visible="-1" pintype="Input" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Change" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Output" visible="-1" pintype="Output">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="4" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="1320" top="2142" width="798" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1320" top="2142" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Cycles" dstnodeid="4" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="5">
+   <BOUNDS type="Box" left="1332" top="840" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1332" top="840" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Reset">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Y Output Value" dstnodeid="3" dstpinname="Reset">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="7">
+   <BOUNDS type="Box" left="1302" top="3264" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1302" top="3264" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IsPrime (Boolean v1)" filename="plugins\v1BooleanIsPrime\v1BooleanIsPrime.csproj" nodename="IsPrime (Boolean v1)" componentmode="Hidden" id="9">
+   <BOUNDS type="Node" left="1320" top="2658" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1320" top="2658" width="1200" height="1200">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="bool" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Y Output Value" dstnodeid="9" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="bool" dstnodeid="7" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="14">
+   <BOUNDS type="Node" left="588" top="8118" width="606" height="228">
+   </BOUNDS>
+   <BOUNDS type="Box" left="588" top="8118" width="606" height="228">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|by fibo|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   </PATCH>
